@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Practica 1 Parcial 2</title>
+	<style>
+		table{
+			margin: auto;
+		}
+	</style>
+</head>
+<body style="background-color: indianred;">
+	<h1 style="text-align: center;">Kia Motors</h1>
+	<h2 style="text-align: center;">Tienda Online</h2>
+<form>
+	<fieldset>
+		<table>
+			<tr>
+				<legend>Informacion del cliente</legend>
+				<td><label for="nombre">Nombre: </label>
+				<input type="text" name="nombre" id="nombre" placeholder="Nombre"></td>
+
+				<td><label for="apellido1">Apellido Paterno</label><br/>
+				<input type="text" name="apellido1" id="apellido1" placeholder="Apellido paterno"></td>
+
+				<td><label for="apellido2">Apellido Materno</label><br/>
+				<input type="text" name="apellido2" id="apellido2" placeholder="Apellido materno"></td><br/>
+			</tr>
+
+			<tr>
+				<td><label for="usuario">Nombre de Usuario</label>
+				<input type="text" name="usuario" id="usuario" placeholder="Usuario"></td>
+
+				<td><label for="contraseña">Password</label>
+				<input type="password" name="contraseña" id="contraseña" placeholder="Password"></td>
+
+				<td><label for="registro">Fecha de registro</label>
+				<input type="date" name="registro" id="registro"></td>
+			</tr>
+		</table>
+	</fieldset>
+	
+	<fieldset>
+		<table>
+		<legend>Datos de facturacion</legend>
+		<tr>
+			<td>			
+				<label for="pais">Pais</label><br/>
+				<select name="pais" id="pais" size="3">
+					<option value="EU">EE.UU</option>
+					<option value="MX">México</option>
+					<option value="CN">Canada</option>
+					<option value="CL">Colombia</option>
+					<option value="ES">España</option>
+					<option value="BS">Brasil</option>
+				</select>
+			</td>
+
+			<td>
+				<label for="ciudad">Ciudad</label><br/>
+				<select name="ciudad" id="ciudad" size="3">
+					<option value="1">San Luis Potosí</option>
+					<option value="2">Ciudad de México</option>
+					<option value="3">Jalisco</option>
+					<option value="4">Monterrey</option>
+					<option value="5">Tampico</option>
+					<option value="6">Veracruz</option>
+				</select>
+			</td>
+
+			<td><label for="calle">Calle</label><br/>
+			<input type="text" name="calle" id="calle" placeholder="Calle"></td>
+		</tr>
+		<tr>
+			<td><label for="numcasa">Numero de casa</label><br/>
+			<input type="text" name="numcasa" id="numcasa" placeholder="Numero Exterior"></td>
+
+			<td><label for="colonia">Colonia</label><br/>
+			<input type="text" name="colonia" id="colonia" placeholder="Colonia"></td>
+
+			<td><label for="correo">E-mail</label><br/>
+			<input type="email" name="correo" id="correo" placeholder="E-mail"></td>
+
+		</tr>
+		<tr>
+			<td><label for="rfc">R.F.C</label><br/>
+			<input type="text" name="rfc" id="rfc" placeholder="R.F.C" maxlength="13"></td>
+
+			<td><label for="postal">C.P</label><br/>
+			<input type="text" name="postal" id="postal" placeholder="Código Postal" maxlength="5"></td>
+
+			<td><input type="checkbox" name="terminos" id="terminos" required>
+			<label for="terminos">Acepto Términos y condiciones</label><br/>
+
+			<input type="submit" name="enviar" id="enviar" value="Enviar">
+			<input type="reset" name="reinicio" id="reinicio" value="Reestablecer"></td>
+		</tr>
+	</table>
+	</fieldset>
+</form>
+</body>
+</html>
