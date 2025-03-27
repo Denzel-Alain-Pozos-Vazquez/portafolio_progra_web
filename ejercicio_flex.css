@@ -1,0 +1,49 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.encabezado{
+    padding: 15px;
+    background: rgb(37, 36, 64);
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+.contenido{
+    display: flex;
+    background: rgb(64, 224, 208);
+    flex-direction: space-between;
+    flex: 1;
+}
+
+.caja{
+    border: 1px solid rgb(0, 0, 0);
+    margin: 15px;
+    padding: 20px;
+    flex: 1;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.5) 
+                         /*Valores positivos a la derecha y hacia abajo*/
+                         /*Valores negativos a la izquierda y arriba*/
+}
+
+.pie{
+    background: rgb(255, 215, 0);
+    margin: 15px;
+    padding: 20px;
+    text-align: center ;
+    font-size: 16px;
+}
+
+@media(max-width:500px){
+    .contenido{
+        flex-direction: column;
+    }
+}
