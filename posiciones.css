@@ -1,0 +1,50 @@
+.contenedor{
+    position: relative;
+    background: gray;
+    height: 150px;
+}
+
+.caja1{
+    position: relative;
+    background: orange;
+    height: 50px;
+    left: 10px;
+    z-index: 2;
+}
+
+.caja2{
+    position: absolute;
+    background: rgb(90, 90, 214);
+    height: 150px;
+    width: 150px;
+    left: 50px;
+    top: 25px;
+    z-index: -1;
+}
+
+.caja3{
+    position: absolute;
+    background: pink;
+    width: 125px;
+    height: 125px;
+    right: 75px;
+    top: 40px;
+}
+
+.caja4{
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: rgb(130, 197, 29);
+    top: 55px;
+    left: 150px;
+}
+
+.caja5{
+    position: fixed; /* dejara al alemento fijo en una posicion */
+    right: 10px;
+    bottom: 15px;
+    border: 2px solid red;
+    border-radius: 50px;
+    background: rgb(136, 1, 1, 0.5);
+}
