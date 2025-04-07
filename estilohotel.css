@@ -1,0 +1,170 @@
+body
+{
+	background: lightskyblue;
+	width: 100%;
+	margin: auto;
+}
+table
+{
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+	overflow: auto;
+	font-family: times new roman;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+a:hover{
+	color: yellow;
+	cursor: pointer;
+}
+
+.imagenencabezado
+{
+	margin: none;
+	background: red;
+	color: white;
+	text-align: center;
+}
+.encabezado
+{
+	font-size: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+	justify-content: justify;
+	background: red;
+	color: white;
+}
+.encabezado:hover
+{
+	color: yellow;
+	cursor: pointer;
+}
+.boton
+{
+	background: red;
+	color: white;
+	text-align: center;
+}
+.botoninicio
+{
+	border-radius: 20px;
+	padding: 10px;
+	border: none;
+}
+.botoninicio:hover
+{
+
+	background: lightgrey;
+	color: black;
+	cursor: pointer
+}
+.tablainfo
+{
+	background: #ffde59;
+}
+.seleccion1
+{
+	text-align: center;
+	font-size: 22px;
+}
+.seleccion2
+{
+	text-align: center;
+}
+.seleccion3
+{
+	text-align: center;
+}
+.metodopago
+{
+	background: rgb(245, 245, 220);
+	text-align: left;
+
+}
+h1
+{
+	text-align: center;
+}
+h4
+{
+	text-align: justify;
+	width: 100%;
+	padding: 5px;
+}
+footer
+{
+	text-align: center;
+	background: gray;
+	color: white;
+}
+
+.viajestendencia {
+  text-align: center;
+  border: solid gray 10px;
+  margin: auto;
+  padding: 5px;
+  width: 50%;
+}
+
+.viajestendencia td {
+  text-align: center; 
+  vertical-align: middle;
+}
+
+.viajestendencia tr:last-child td {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px; 
+}
+
+.viajestendencia button {
+  background: red;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.viajestendencia button:hover {
+  background: darkred;
+}
+
+.mapahotel{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.hosp{
+	width: 250px;
+	height: 150px;
+	margin: 10px;
+	padding: 10px;
+	border: none;
+	border-radius: 12px;
+	background-size: cover;
+	background-position: center;
+	color: white;
+	overflow: hidden;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+.tablahoteles{
+	margin: auto;
+}
+
+@media(max-width: 1000px){
+	.hosp{
+		flex-direction: column;
+	}
+}

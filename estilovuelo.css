@@ -1,0 +1,249 @@
+body
+{
+	background: lightskyblue;
+	width: 100%;
+	margin: auto;
+}
+table
+{
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+	overflow: auto;
+	font-family: times new roman;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+a:hover{
+	color: yellow;
+	cursor: pointer;
+}
+
+.imagenencabezado
+{
+	margin: none;
+	background: red;
+	color: white;
+	text-align: center;
+}
+.encabezado
+{
+	font-size: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+	justify-content: justify;
+	background: red;
+	color: white;
+}
+.encabezado:hover
+{
+	color: yellow;
+	cursor: pointer;
+}
+.boton
+{
+	background: red;
+	color: white;
+	text-align: center;
+}
+.botoninicio
+{
+	border-radius: 20px;
+	padding: 10px;
+	border: none;
+}
+.botoninicio:hover
+{
+
+	background: lightgrey;
+	color: black;
+	cursor: pointer
+}
+.tablainfo
+{
+	background: #ffde59;
+}
+.seleccion1
+{
+	text-align: center;
+	font-size: 22px;
+}
+.seleccion2
+{
+	text-align: center;
+}
+.seleccion3
+{
+	text-align: center;
+}
+.metodopago
+{
+	background: rgb(245, 245, 220);
+	text-align: left;
+
+}
+h1
+{
+	text-align: center;
+}
+h4
+{
+	text-align: justify;
+	width: 100%;
+	padding: 5px;
+}
+footer
+{
+	text-align: center;
+	background: gray;
+	color: white;
+}
+
+
+.botonconsulta{
+  background: red;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botonconsulta:hover {
+  background: darkred;
+}
+
+.titulovuelo{
+	font-size: 32px;
+	font-style: italic;
+}
+
+.titulociudad{
+	font-size: 24px;
+}
+
+.textodesc{
+	font-size: 18px;
+}
+
+.vuelosdisp{
+	border: none white;
+	border-radius: 12px;
+}
+
+.contenedor-vuelos {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	padding: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  .vuelo-card {
+	width: 280px;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 16px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	background: white;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.3s ease;
+  }
+  
+  .vuelo-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .vuelo-header {
+	font-size: 18px;
+	font-weight: bold;
+	color: #2c3e50;
+	margin-bottom: 10px;
+	text-align: center;
+	padding: 8px 0;
+	border-bottom: 1px solid #eee;
+  }
+  
+  .vuelo-imagen {
+	width: 100%;
+	height: 160px;
+	object-fit: cover;
+	border-radius: 4px;
+	margin-bottom: 12px;
+  }
+  
+  .vuelo-descripcion {
+	font-size: 14px;
+	color: #555;
+	margin-bottom: 15px;
+	line-height: 1.4;
+	flex-grow: 1;
+  }
+  
+  .vuelo-precio {
+	font-size: 20px;
+	font-weight: bold;
+	color: #e74c3c;
+	text-align: center;
+	margin: 10px 0;
+	padding: 8px 0;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+  }
+  .vuelo-card.tendencia-card {
+	width: 50%; 
+	transform: scale(1.08); 
+	margin: 15px;
+	z-index: 10;
+	border: 2px solid #f39c12;
+	box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3); 
+  }
+  
+  .tendencia-card .vuelo-header {
+	font-size: 22px; 
+	padding: 12px 0; 
+	background: linear-gradient(to right, #f39c12, #f1c40f); 
+	color: white;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  }
+  
+  .tendencia-card .vuelo-imagen {
+	height: 200px; 
+	border: 3px solid white; 
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  
+  .tendencia-card .vuelo-precio {
+	font-size: 24px; 
+	color: #e74c3c; 
+	background-color: #fef9e7; 
+	padding: 10px;
+  }
+  
+  .tendencia-card:hover {
+	transform: scale(1.12); 
+	box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
+  }
+  
+  
+  @media (max-width: 768px) {
+	.vuelo-card {
+	  width: 100%;
+	  max-width: 350px;
+	}
+	
+	.contenedor-vuelos {
+	  gap: 15px;
+	  padding: 15px;
+	}
+  }
