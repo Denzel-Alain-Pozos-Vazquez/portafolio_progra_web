@@ -1,0 +1,63 @@
+.titulo{
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+.alumno{
+    text-align: center;
+    color: white;
+}
+
+.encabezado{
+    background: rgb(48, 48, 48);
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    background: red;
+    border: solid 2px rgb(255, 255, 255);
+    border-radius: 12px;
+    height: 50px;
+    width: 150px;
+}
+
+.boton:hover{
+    background: whitesmoke;
+    color: darkred;
+}
+.boton:hover ~ .galeria .image {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+.boton:hover ~ .galeria .imagen {
+      opacity: 0; 
+      visibility: hidden; 
+  }
+
+.imagen{
+    height: 300px;
+    width: 175px;
+    border: solid 5px rgb(0, 77, 128);
+    border-radius: 10px;
+    padding: 0px;
+}
+
+.image{
+    height: 300px;
+    width: 175px;
+    border: none;
+    border-radius: 5px;
+}
+
+.galeria{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px 5px 5px 5px;
+}
