@@ -170,28 +170,3 @@ video
 .icon {
     font-size: 20px;
 }
-.redes {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    height: 100px;
-}
-
-.fg {
-    width: 150px;
-    height: 80px;
-}
-.ig
-{
-    width: 100px;
-    height: 80px;
-}
-.twitter
-{
-	width: 130px;
-    height: 80px;
-}
-.redes th
-{
-
-}

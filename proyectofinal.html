@@ -109,5 +109,27 @@
 	Se prohíbe cualquier reproducción total o parcial de este contenido sin autorización por escrito de su titular.
 	<br/>Es responsabilidad de la cadena hotelera y/o de la propiedad garantizar la exactitud de las fotografías mostradas.No nos hacemos responsables por inexactitudes en las fotografías.
 	</footer>
+
+	<script>
+window.addEventListener('mouseover', initLandbot, { once: true });
+window.addEventListener('touchstart', initLandbot, { once: true });
+var myLandbot;
+function initLandbot() {
+  if (!myLandbot) {
+    var s = document.createElement('script');
+    s.type = "module"
+    s.async = true;
+    s.addEventListener('load', function() {
+      var myLandbot = new Landbot.Livechat({
+        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2925358-IEXP3GYRKYUCTOT4/index.json',
+      });
+    });
+    s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  }
+}
+</script>
+
 </body>
 </html>
