@@ -132,6 +132,165 @@
         <img src="imagenes/twitter-removebg-preview.png" class="redsocial">
     </div>
 
+    
+    <div class="container">
+        <!-- Formulario para crear nuevas publicaciones -->
+        <section class="post-form">
+            <h2>¡Comparte tu aventura!</h2>
+            <form id="newPostForm">
+                <textarea id="postContent" placeholder="¿Qué quieres compartir con la comunidad?"></textarea>
+                <button type="submit">Publicar</button>
+            </form>
+        </section>
+        
+        <!-- Sección donde se mostrarán las publicaciones -->
+        <section class="posts-container" id="postsContainer">
+            <!-- Las publicaciones se generarán dinámicamente con JavaScript -->
+        </section>
+    </div>
+    
+    <script>
+        // Variables globales
+        let posts = [];
+        let currentUser = "Entrenador Pokémon"; // En una aplicación real, esto vendría de un sistema de login
+        
+        // Función para cargar las publicaciones al iniciar
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPosts();
+            setupEventListeners();
+        });
+        
+        // Cargar publicaciones de ejemplo (en una app real, esto vendría de una base de datos)
+        function loadPosts() {
+
+            
+            renderPosts();
+        }
+        
+        // Configurar event listeners
+        function setupEventListeners() {
+            // Formulario para nueva publicación
+            document.getElementById('newPostForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const content = document.getElementById('postContent').value.trim();
+                
+                if (content) {
+                    addNewPost(content);
+                    document.getElementById('postContent').value = '';
+                }
+            });
+        }
+        
+        // Añadir nueva publicación
+        function addNewPost(content) {
+            const newPost = {
+                id: Date.now(), // Usamos el timestamp como ID único
+                user: currentUser,
+                content: content,
+                date: new Date().toISOString().split('T')[0], // Fecha en formato YYYY-MM-DD
+                comments: []
+            };
+            
+            posts.unshift(newPost); // Añadir al principio del array
+            renderPosts();
+        }
+        
+        // Añadir nuevo comentario
+        function addComment(postId, content) {
+            const post = posts.find(p => p.id === postId);
+            if (post) {
+                post.comments.push({
+                    user: currentUser,
+                    content: content
+                });
+                renderPosts();
+            }
+        }
+        
+        // Renderizar todas las publicaciones
+        function renderPosts() {
+            const container = document.getElementById('postsContainer');
+            container.innerHTML = '';
+            
+            if (posts.length === 0) {
+                container.innerHTML = '<p>No hay publicaciones aún. ¡Sé el primero en compartir!</p>';
+                return;
+            }
+            
+            posts.forEach(post => {
+                const postElement = document.createElement('article');
+                postElement.className = 'post';
+                postElement.innerHTML = `
+                    <div class="post-header">
+                        <div class="user-avatar">${post.user.charAt(0)}</div>
+                        <div class="post-info">
+                            <h3>${post.user}</h3>
+                            <small>${post.date}</small>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>${post.content}</p>
+                    </div>
+                    <div class="post-actions">
+                        <button onclick="likePost(${post.id})">
+                            <span>❤️</span> Me gusta
+                        </button>
+                        <button onclick="showCommentForm(${post.id})">
+                            <span>💬</span> Comentar
+                        </button>
+                    </div>
+                    <div class="comments" id="comments-${post.id}">
+                        ${renderComments(post.comments)}
+                    </div>
+                    <div class="comment-form" id="commentForm-${post.id}" style="display: none;">
+                        <input type="text" id="commentInput-${post.id}" placeholder="Escribe tu comentario...">
+                        <button onclick="submitComment(${post.id})">Enviar</button>
+                    </div>
+                `;
+                
+                container.appendChild(postElement);
+            });
+        }
+        
+        // Renderizar comentarios
+        function renderComments(comments) {
+            if (comments.length === 0) return '<p>No hay comentarios aún.</p>';
+            
+            return comments.map(comment => `
+                <div class="comment">
+                    <div class="comment-avatar">${comment.user.charAt(0)}</div>
+                    <div class="comment-content">
+                        <div class="comment-author">${comment.user}</div>
+                        <div class="comment-text">${comment.content}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Funciones globales para los botones
+        window.likePost = function(postId) {
+            alert(`¡Le diste me gusta a la publicación ${postId}!`);
+            // En una aplicación real, aquí se actualizaría el estado en la base de datos
+        };
+        
+        window.showCommentForm = function(postId) {
+            const form = document.getElementById(`commentForm-${postId}`);
+            form.style.display = form.style.display === 'none' ? 'flex' : 'none';
+        };
+        
+        window.submitComment = function(postId) {
+            const input = document.getElementById(`commentInput-${postId}`);
+            const content = input.value.trim();
+            
+            if (content) {
+                addComment(postId, content);
+                input.value = '';
+                document.getElementById(`commentForm-${postId}`).style.display = 'none';
+            }
+        };
+    </script>
+</html>
+
     <footer>
 	Elaborado unicamente para la materia de Programación 1<br/>
 	Universidad Politécnica de San Luis Potosi<br/>

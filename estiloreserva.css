@@ -1,0 +1,120 @@
+body
+{
+	background: lightskyblue;
+	width: 100%;
+	margin: auto;
+}
+table
+{
+    border-collapse: collapse;
+    margin: auto;
+    width: 100%;
+	overflow: auto;
+	font-family: times new roman;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+a:hover{
+	color: yellow;
+	cursor: pointer;
+}
+
+.imagenencabezado
+{
+	margin: none;
+	background: red;
+	color: white;
+	text-align: center;
+}
+.encabezado
+{
+	font-size: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: left;
+	justify-content: justify;
+	background: red;
+	color: white;
+}
+.encabezado:hover
+{
+	color: yellow;
+	cursor: pointer;
+}
+.boton
+{
+	background: red;
+	color: white;
+	text-align: center;
+}
+.botoninicio
+{
+	border-radius: 20px;
+	padding: 10px;
+	border: none;
+}
+.botoninicio:hover
+{
+
+	background: lightgrey;
+	color: black;
+	cursor: pointer
+}
+.tablainfo
+{
+	background: #ffde59;
+}
+.seleccion1
+{
+	text-align: center;
+	font-size: 22px;
+}
+.seleccion2
+{
+	text-align: center;
+}
+.seleccion3
+{
+	text-align: center;
+}
+.metodopago
+{
+	background: rgb(245, 245, 220);
+	text-align: left;
+
+}
+h1
+{
+	text-align: center;
+}
+h4
+{
+	text-align: justify;
+	width: 100%;
+	padding: 5px;
+}
+footer
+{
+	text-align: center;
+	background: gray;
+	color: white;
+}
+
+
+.botonconsulta{
+  background: red;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botonconsulta:hover {
+  background: darkred;
+}

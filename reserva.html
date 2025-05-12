@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="estilovuelo.css">
+	<title>PROYECTO FINAL</title>
+</head>
+<body>
+	<table>
+		<div>
+		<tr>
+		<th class="imagenencabezado"><a href="proyectofinal.html"><img src="imagenes/logo.png" width="100px" height="60px"></a></th>
+		<th class="encabezado"><a href="hoteles.html">Hoteles</a></th>
+		<th class="encabezado"><a href="vuelos.html">Vuelos</a></th>
+		<th class="encabezado"><a href="ofertas.html">Ofertas</a></th>
+		<th class="encabezado"><a href="ayuda.html">Ayuda</a></th>
+		<th class="boton"><a href="iniciarsesion.html"><button class="botoninicio">Iniciar Sesión</button></a></th>
+		</tr>
+		</div>
+	</table>
+	<br/>
+	<div class="tablainfo">
+
+	
+	<footer>
+		<p>Viajes Pikachu - San Luis Potosi</p>
+		<p>C. Urbano Villalón 500, La Ladrillera, 78369 San Luis Potosí, S.L.P.</p>
+		<p>Telefono: 800.265.0125 www.viajespikachu.com.mx</p>
+	<p>© Despegar.com México S.A. de C.V.. Todos los derechos reservados.</p>
+	<p>Se prohíbe cualquier reproducción total o parcial de este contenido sin autorización por escrito de su titular.</p>	
+	<p>Es responsabilidad de la cadena hotelera y/o de la propiedad garantizar la exactitud de las fotografías mostradas.</p>
+	<p>No nos hacemos responsables por inexactitudes en las fotografías.</p>
+	</footer>
+
+	<script>
+window.addEventListener('mouseover', initLandbot, { once: true });
+window.addEventListener('touchstart', initLandbot, { once: true });
+var myLandbot;
+function initLandbot() {
+  if (!myLandbot) {
+    var s = document.createElement('script');
+    s.type = "module"
+    s.async = true;
+    s.addEventListener('load', function() {
+      var myLandbot = new Landbot.Livechat({
+        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-2925358-IEXP3GYRKYUCTOT4/index.json',
+      });
+    });
+    s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  }
+}
+</script>
+
+</body>
+</html>
