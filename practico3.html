@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Practico Parcial 3</title>
+    <link type="text/css" href="practico3.css" rel="stylesheet">
+    <script type="text/javascript" src="practico3.js"></script>
+</head>
+<body>
+    <h1>Pagos de estacionamiento</h1>
+    <form>
+        <label for="horas">Horas de estacionamiento</label><br/>
+        <input type="number" id="horas" name="horas" min="1"><br/><br/>
+
+        <label for="auto">Tipo de auto</label><br/>
+        <select name="auto" id="auto">
+            <option value="achico">Auto Chico</option>
+            <option value="camioneta">Camioneta</option>
+            <option value="camion">Camion</option>
+        </select><br/><br/>
+
+        <input type="button" value="Calcular el total a pagar" onclick="pagar()">
+    </form>
+    <h2>TOTAL A PAGAR</h2>
+    <p id="pagar"></p>
+</body>
+</html>
