@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico de Programación Web</title>
+    <link rel="stylesheet" href="diagnostico.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+    <h2>Formulario de Diagnóstico</h2>
+    <form id="diagnosticoForm">
+        <label>1. ¿Cuál es el propósito de HTML?</label><br>
+        <input type="radio" name="q1" value="correcto"> Estructurar contenido <br>
+        <input type="radio" name="q1" value="incorrecto"> Estilizar la página <br>
+        <input type="radio" name="q1" value="incorrecto"> Interactividad <br><br>
+
+        <label>2. ¿Qué propiedad en CSS cambia el color del fondo?</label><br>
+        <input type="radio" name="q2" value="correcto"> background-color <br>
+        <input type="radio" name="q2" value="incorrecto"> color <br>
+        <input type="radio" name="q2" value="incorrecto"> font-size <br><br>
+
+        <label>3. ¿Cómo se declara una variable en JavaScript?</label><br>
+        <input type="radio" name="q3" value="correcto"> let miVariable <br>
+        <input type="radio" name="q3" value="incorrecto"> variable = "valor" <br>
+        <input type="radio" name="q3" value="incorrecto"> define miVariable <br><br>
+
+        <button type="button" onclick="evaluarFormulario()">Evaluar</button>
+    </form>
+
+    <div id="resultado"></div>
+    <canvas id="grafico"></canvas>
+    <button onclick="generarPDF()">Generar PDF</button>
+
+    <script src="diagnostico.js"></script>
+</body>
+</html>
