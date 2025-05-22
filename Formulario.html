@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Datos del Usuario</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background: linear-gradient(to right, #F7D346,#e11313);
+		}
+		h2 {
+			text-align: center;
+			color: white;
+		}
+		h3{
+			color: white;
+		}
+		form {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+			max-width: 600px;
+			margin: auto;
+		}
+		table {
+			width: 100%;
+		}
+		td {
+			padding: 10px;
+			vertical-align: top;
+		}
+		label {
+			font-weight: bold;
+		}
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		select {
+			width: 100%;
+			padding: 8px;
+			box-sizing: border-box;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			margin-top: 10px;
+		}
+		button:hover {
+			background-color: #45a049;
+		}
+		iframe {
+			display: block;
+			margin: 20px auto;
+			border: 1px solid #ccc;
+			width: 90%;
+			height: 500px;
+		}
+	</style>
+</head>
+<body>
+
+	<h2>Formulario de Usuario</h2>
+
+	<form id="formulario">
+		<table class="principal">
+			<tr>
+				<td><label for="nombre">Nombres</label></td>
+				<td><input type="text" name="nombre" id="nombre" required></td>
+			</tr>
+			<tr>
+				<td><label for="apellido">Apellidos</label></td>
+				<td><input type="text" name="apellido" id="apellido" required></td>
+			</tr>
+			<tr>
+				<td><label for="correo">Correo electrónico</label></td>
+				<td><input type="email" name="correo" id="correo" required></td>
+			</tr>
+			<tr>
+				<td><label for="telefono">Teléfono fijo o celular</label></td>
+				<td><input type="number" name="telefono" id="telefono" required></td>
+			</tr>
+			<tr>
+				<td><label for="cantifam">Cantidad de personas al viaje</label></td>
+				<td><input type="number" name="familia" id="cantifam" required min="1" onchange="calcularPrecio()"></td>
+			</tr>
+			<tr>
+				<td><label for="vuelo">¿A dónde quieres ir?</label></td>
+				<td>
+					<select name="vuelo" id="vuelo" onchange="calcularPrecio()" required>
+						<option value="">Seleccione un destino</option>
+						<option value="Ciudad Puntera">Ciudad Puntera</option>
+						<option value="Kanto">Kanto</option>
+						<option value="Jotho">Jotho</option>
+						<option value="Hoenn">Hoenn</option>
+						<option value="Sinnoh">Sinnoh</option>
+						<option value="Kalos">Kalos</option>
+						<option value="Teselia">Teselia</option>
+						<option value="Alola">Alola</option>
+						<option value="Paldea">Paldea</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="precio">Precio por persona</label></td>
+				<td><input type="text" id="precio" readonly></td>
+			</tr>
+			<tr>
+				<td><label for="total">Total a pagar</label></td>
+				<td><input type="text" id="total" readonly></td>
+			</tr>
+		</table>
+		<div style="text-align: center;">
+			<button type="button" onclick="generarPDF()">Mandar Formulario</button>
+		</div>
+	</form>
+
+	<h3 style="text-align:center;">Vista previa del PDF</h3>
+	<iframe id="vistaPDF"></iframe>
+
+	<!-- Librerías jsPDF y autoTable -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+	<script>
+		function calcularPrecio() {
+			const precios = {
+				"Ciudad Puntera": 100,
+				"Kanto": 200,
+				"Jotho": 250,
+				"Hoenn": 300,
+				"Sinnoh": 350,
+				"Kalos": 400,
+				"Teselia": 450,
+				"Alola": 500,
+				"Paldea": 550
+			};
+			const destino = document.getElementById("vuelo").value;
+			const cantidad = parseInt(document.getElementById("cantifam").value || "1");
+			const precioPorPersona = precios[destino] || 0;
+			const total = precioPorPersona * cantidad;
+
+			document.getElementById("precio").value = "$" + precioPorPersona;
+			document.getElementById("total").value = "$" + total;
+		}
+
+		async function generarPDF() {
+			const { jsPDF } = window.jspdf;
+			const doc = new jsPDF();
+
+			// Datos del formulario
+			const datos = [
+				["Nombres", document.getElementById("nombre").value],
+				["Apellidos", document.getElementById("apellido").value],
+				["Correo electrónico", document.getElementById("correo").value],
+				["Teléfono", document.getElementById("telefono").value],
+				["Cantidad de personas", document.getElementById("cantifam").value],
+				["Destino", document.getElementById("vuelo").value],
+				["Precio por persona", document.getElementById("precio").value],
+				["Total a pagar", document.getElementById("total").value]
+			];
+
+			doc.setFontSize(16);
+			doc.text("Resumen de Reserva de Viaje", 70, 20);
+
+			doc.autoTable({
+				head: [["Campo", "Valor"]],
+				body: datos,
+				startY: 30,
+				theme: 'striped',
+				styles: { halign: 'left' }
+			});
+
+			// Mostrar vista previa en el iframe
+			const pdfBlob = doc.output("blob");
+			const url = URL.createObjectURL(pdfBlob);
+			document.getElementById("vistaPDF").src = url;
+		}
+	</script>
+
+</body>
+</html>

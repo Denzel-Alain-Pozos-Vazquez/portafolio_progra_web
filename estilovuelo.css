@@ -1,58 +1,31 @@
 body
 {
-	background: lightskyblue;
-	width: 100%;
-	margin: auto;
+	background: linear-gradient(to right, #F7D346,#e11313);
 }
+
 table
 {
+    border: 2px solid black;
+	background: #FFDB58;
     border-collapse: collapse;
     margin: auto;
     width: 100%;
 	overflow: auto;
-	font-family: times new roman;
 }
-
-a{
+a
+{
+	font-size: 30px;
 	text-decoration: none;
-	color: white;
+	color: #ff6901;
 }
-
-a:hover{
-	color: yellow;
+a:hover
+{
+	color: black;
 	cursor: pointer;
-}
-
-.imagenencabezado
-{
-	margin: none;
-	background: red;
-	color: white;
-	text-align: center;
-}
-.encabezado
-{
-	font-size: 18px;
-	padding-left: 20px;
-	padding-right: 20px;
-	text-align: left;
-	justify-content: justify;
-	background: red;
-	color: white;
-}
-.encabezado:hover
-{
-	color: yellow;
-	cursor: pointer;
-}
-.boton
-{
-	background: red;
-	color: white;
-	text-align: center;
 }
 .botoninicio
 {
+	font-size: 20px;
 	border-radius: 20px;
 	padding: 10px;
 	border: none;
@@ -64,28 +37,34 @@ a:hover{
 	color: black;
 	cursor: pointer
 }
+----------------------------------------------------------
 .tablainfo
 {
 	background: #ffde59;
+
 }
 .seleccion1
 {
 	text-align: center;
 	font-size: 22px;
 }
-.seleccion2
-{
+.seleccion2{
+	background: #ffde59;
+	display: flex;
 	text-align: center;
+	align-items: center;
 }
-.seleccion3
-{
-	text-align: center;
-}
-.metodopago
-{
-	background: rgb(245, 245, 220);
-	text-align: left;
-
+.formulario{
+	background: red;
+	color: white;
+	cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 20px auto;
+  width: 100%;
 }
 h1
 {
@@ -236,14 +215,3 @@ footer
   }
   
   
-  @media (max-width: 768px) {
-	.vuelo-card {
-	  width: 100%;
-	  max-width: 350px;
-	}
-	
-	.contenedor-vuelos {
-	  gap: 15px;
-	  padding: 15px;
-	}
-  }

@@ -1,94 +1,181 @@
-body 
-{
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background-color: #f5f5f5;
+/* Estilo general */
+body {
+    background: linear-gradient(to right, #F7D346, #e11313);
 }
-table
-{
+
+table {
+    border: 2px solid black;
+    background: #FFDB58;
     border-collapse: collapse;
     margin: auto;
     width: 100%;
-	overflow: auto;
-	font-family: times new roman;
+    overflow: auto;
 }
 
-a{
-	text-decoration: none;
-	color: white;
+a {
+    font-size: 30px;
+    text-decoration: none;
+    color: #ff6901;
 }
 
-a:hover{
-	color: yellow;
-	cursor: pointer;
+a:hover {
+    color: black;
+    cursor: pointer;
 }
 
-.imagenencabezado
-{
-	margin: none;
-	background: red;
-	color: white;
-	text-align: center;
+.botoninicio {
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
 }
-.encabezado
-{
-	font-size: 18px;
-	padding-left: 20px;
-	padding-right: 20px;
-	text-align: left;
-	justify-content: justify;
-	background: red;
-	color: white;
+
+.botoninicio:hover {
+    background: lightgrey;
+    color: black;
+    cursor: pointer;
 }
-.encabezado:hover
-{
-	color: yellow;
-	cursor: pointer;
+
+/* Títulos y slogan */
+h1 {
+    text-align: center;
+    color: #222;
+    margin-top: 30px;
+    font-size: 28px;
+    padding: 0 10px;
 }
-.boton
-{
-	background: red;
-	color: white;
-	text-align: center;
+
+.slogan {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 16px;
+    padding: 0 10px;
 }
-.botoninicio
-{
-	border-radius: 20px;
-	padding: 10px;
-	border: none;
+
+/* Contenedor de ofertas */
+.oferta-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
-.botoninicio:hover
-{
-	background: lightgrey;
-	color: black;
-	cursor: pointer
+
+/* Estilo individual de cada paquete */
+.paquete {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-/*--------------------------------------------------------------*/
-        .oferta-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .paquete {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            width: 300px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .paquete h3 {
-            color: #2a75bb;
-            border-bottom: 2px solid #ffcb05;
-            padding-bottom: 10px;
-        }
-        .slogan {
-            text-align: center;
-            font-style: italic;
-            color: #2a75bb;
-            margin: 20px 0;
-            font-size: 1.2em;
-        }
+
+.paquete:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.paquete h3 {
+    color: #cc0000;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.paquete p {
+    margin: 6px 0;
+    color: #333;
+    font-size: 15px;
+}
+
+/* RESPONSIVE - Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(to right, #F7D346, #e11313);
+        margin: auto;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: auto;
+        overflow: auto;
+        font-family: times new roman;
+    }
+
+    a {
+        text-decoration: none;
+            color: #ff6901;
+    }
+
+    a:hover {
+            color: black;
+    cursor: pointer;
+    }
+
+    .imagenencabezado {
+        margin: none;
+    background: #FFDB58;
+            color: #ff6901;
+        text-align: center;
+    }
+
+    .encabezado {
+        text-align: center; /* Cambiado de left a center */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Cambiado de justify a center */
+    background: #FFDB58;
+            color: #ff6901;
+    }
+
+    .encabezado:hover {
+        color: yellow;
+        cursor: pointer;
+    }
+
+    .boton {
+            background: #FFDB58;
+        color: white;
+        text-align: center;
+    }
+
+    .botoninicio {
+        border: none;
+    }
+
+    .botoninicio:hover {
+        background: lightgrey;
+        color: black;
+        cursor: pointer;
+    }
+
+    
+
+    th {
+        display: block;
+        text-align: center;
+        padding: 8px 0;
+    }
+
+    .botoninicio {
+        margin-top: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .slogan {
+        font-size: 14px;
+    }
+
+    .paquete h3 {
+        font-size: 18px;
+    }
+
+    .paquete p {
+        font-size: 14px;
+    }
+}

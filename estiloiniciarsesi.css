@@ -1,12 +1,14 @@
 body
 {
-	margin-top: 0px;
-	background: skyblue;
+	margin: auto;
+	background: linear-gradient(to right, gold,white);
 }
 .textototal
 {
+	height: 0%;
+	width: 29%;
+	background: orangered;
 	text-align: center;
-	width: 100%;
 	margin: auto;
 }
 .imageninicio
@@ -17,11 +19,17 @@ body
 .texto1
 {
 	font-size: 35px;
+	color: white;
 }
 .texto2
 {
  font-size: 20px;
- font-family: arial;
+ color: white;
+}
+.check
+{
+	color: white;
+	font-size: 20px;
 }
 
 .imagen2:hover
@@ -61,73 +69,4 @@ input[type=text]:focus
 	cursor: pointer;
 	background: yellow;
 	color: black;
-}
-
-.@media
-{
-	body
-{
-	margin-top: 0px;
-	width: 100px;
-	background: skyblue;
-}
-.textototal
-{
-	text-align: center;
-	width: 100%;
-	margin: auto;
-}
-.imageninicio
-{
-	 background: red;
-	 border: 8px;
-}
-.texto1
-{
-	font-size: 35px;
-}
-.texto2
-{
- font-size: 20px;
- font-family: arial;
-}
-
-.imagen2:hover
-{
-	cursor: pointer;
-}
-input[type=text]
-{
-	border-radius: 8px;
-	padding: 20px;
-	width: 30%;
-	font-size: 15px;
-}
-input[type=text]:focus
-{
-	background: lightgreen;
-	color: black;
-}
-.boton
-{
-	border-radius: 8px;
-	padding: 18px;
-}
-.boton:hover
-{
-	cursor: pointer;
-	background: red;
-	color: white;
-}
-.volver
-{
-	border-radius: 8px;
-	padding: 18px;
-}
-.volver:hover
-{
-	cursor: pointer;
-	background: yellow;
-	color: black;
-}
 }

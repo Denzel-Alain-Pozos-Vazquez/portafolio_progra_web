@@ -1,170 +1,120 @@
 body
 {
-	background: lightskyblue;
-	width: 100%;
-	margin: auto;
+    background: linear-gradient(to right, #F7D346,#e11313);
 }
+
 table
 {
+    border: 2px solid black;
+    background: #FFDB58;
     border-collapse: collapse;
     margin: auto;
     width: 100%;
-	overflow: auto;
-	font-family: times new roman;
+    overflow: auto;
 }
-
-a{
-	text-decoration: none;
-	color: white;
-}
-
-a:hover{
-	color: yellow;
-	cursor: pointer;
-}
-
-.imagenencabezado
+a
 {
-	margin: none;
-	background: red;
-	color: white;
-	text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+    color: #ff6901;
 }
-.encabezado
+a:hover
 {
-	font-size: 18px;
-	padding-left: 20px;
-	padding-right: 20px;
-	text-align: left;
-	justify-content: justify;
-	background: red;
-	color: white;
-}
-.encabezado:hover
-{
-	color: yellow;
-	cursor: pointer;
-}
-.boton
-{
-	background: red;
-	color: white;
-	text-align: center;
+    color: black;
+    cursor: pointer;
 }
 .botoninicio
 {
-	border-radius: 20px;
-	padding: 10px;
-	border: none;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
 }
 .botoninicio:hover
 {
 
-	background: lightgrey;
-	color: black;
-	cursor: pointer
-}
-.tablainfo
-{
-	background: #ffde59;
-}
-.seleccion1
-{
-	text-align: center;
-	font-size: 22px;
-}
-.seleccion2
-{
-	text-align: center;
-}
-.seleccion3
-{
-	text-align: center;
-}
-.metodopago
-{
-	background: rgb(245, 245, 220);
-	text-align: left;
-
-}
-h1
-{
-	text-align: center;
-}
-h4
-{
-	text-align: justify;
-	width: 100%;
-	padding: 5px;
-}
-footer
-{
-	text-align: center;
-	background: gray;
-	color: white;
+    background: lightgrey;
+    color: black;
+    cursor: pointer
 }
 
-.viajestendencia {
-  text-align: center;
-  border: solid gray 10px;
-  margin: auto;
-  padding: 5px;
-  width: 50%;
+h1 {
+    text-align: center;
+    margin: 20px;
+    font-size: 26px;
 }
 
-.viajestendencia td {
-  text-align: center; 
-  vertical-align: middle;
+.mapahotel {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
 }
 
-.viajestendencia tr:last-child td {
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  gap: 10px; 
+.tablahoteles {
+    overflow-x: auto;
+    margin: 20px;
 }
 
-.viajestendencia button {
-  background: red;
-  color: white;
-  border-radius: 15px;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.tablahoteles table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
 }
 
-.viajestendencia button:hover {
-  background: darkred;
+.hosp {
+    width: 100%;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
 }
 
-.mapahotel{
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+footer {
+    background: #E97451;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-.hosp{
-	width: 250px;
-	height: 150px;
-	margin: 10px;
-	padding: 10px;
-	border: none;
-	border-radius: 12px;
-	background-size: cover;
-	background-position: center;
-	color: white;
-	overflow: hidden;
-	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-}
-.tablahoteles{
-	margin: auto;
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .mapahotel iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .hosp {
+        height: 100px;
+        font-size: 14px;
+    }
 }
 
-@media(max-width: 1000px){
-	.hosp{
-		flex-direction: column;
-	}
+@media (max-width: 480px) {
+    .botoninicio {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        align-items: center;
+        text-align: center;
+    }
 }
